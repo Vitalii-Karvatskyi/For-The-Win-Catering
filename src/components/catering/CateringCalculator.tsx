@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { cateringPricing } from '../../config/cateringPricing';
 import { cateringSections } from '../../config/cateringContent';
+import { menuImages } from '../../config/menuImages';
 import {
   calculateCateringEstimate,
   createEmptyQuantities,
@@ -36,6 +37,7 @@ type QuantityStepperProps = {
   priceLabel: string;
   value: number;
   max?: number;
+  imageSrc?: string;
   onChange: (value: number) => void;
 };
 
@@ -45,11 +47,22 @@ function QuantityStepper({
   priceLabel,
   value,
   max,
+  imageSrc,
   onChange,
 }: QuantityStepperProps) {
   return (
-    <div className="qty-row">
-      <div>
+    <div className={imageSrc ? 'qty-row qty-row--with-image' : 'qty-row'}>
+      {imageSrc ? (
+        <img
+          className="qty-row__image"
+          src={imageSrc}
+          alt={label}
+          width={72}
+          height={72}
+          loading="lazy"
+        />
+      ) : null}
+      <div className="qty-row__info">
         <div className="qty-row__label" id={`${id}-label`}>
           {label}
         </div>
@@ -231,6 +244,7 @@ export function CateringCalculator() {
                     id={`menu-${key}`}
                     label={item.label}
                     priceLabel={priceLabel}
+                    imageSrc={menuImages[menuKey]}
                     value={quantities[menuKey]}
                     max={'pricePerGuest' in item ? 1 : undefined}
                     onChange={(v) => updateQuantity(menuKey, v)}
