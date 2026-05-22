@@ -31,7 +31,7 @@ export const cateringSections = {
   },
   faq: {
     id: 'faq',
-    title: 'Truck Pricing & Requirements',
+    title: 'Van Pricing & Requirements',
   },
   requirements: {
     id: 'requirements',
