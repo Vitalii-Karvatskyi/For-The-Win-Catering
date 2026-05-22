@@ -187,7 +187,6 @@ export function CateringCalculator() {
                   type="number"
                   inputMode="numeric"
                   min={cateringPricing.minGuestCount}
-                  max={cateringPricing.maxGuestCount}
                   step={1}
                   value={guestCountInputValue(guestCount)}
                   onChange={(e) =>

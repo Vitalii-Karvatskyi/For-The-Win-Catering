@@ -37,8 +37,6 @@ export function validateCateringInquiry(
     data.guestCount < cateringPricing.minGuestCount
   ) {
     errors.guestCount = `Guest count must be at least ${cateringPricing.minGuestCount}`;
-  } else if (data.guestCount > cateringPricing.maxGuestCount) {
-    errors.guestCount = `Guest count must be at most ${cateringPricing.maxGuestCount}`;
   }
 
   if (!data.eventLocation.trim()) {

@@ -11,10 +11,7 @@ export function clampGuestCount(value: number): number {
   if (!Number.isFinite(value) || value <= 0) {
     return cateringPricing.minGuestCount;
   }
-  return Math.min(
-    cateringPricing.maxGuestCount,
-    Math.max(cateringPricing.minGuestCount, value),
-  );
+  return Math.max(cateringPricing.minGuestCount, value);
 }
 
 export function guestCountInputValue(count: number): string {

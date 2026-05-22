@@ -107,7 +107,6 @@ export const cateringPricing = {
     'This is only an estimate. Final pricing depends on event details, location, menu, service type, and availability.',
 
   minGuestCount: 10,
-  maxGuestCount: 500,
 } as const;
 
 export type MenuItemId = keyof typeof cateringPricing.menu;

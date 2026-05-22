@@ -212,7 +212,6 @@ export function CateringForm() {
                 type="number"
                 inputMode="numeric"
                 min={cateringPricing.minGuestCount}
-                max={cateringPricing.maxGuestCount}
                 step={1}
                 value={guestCountInputValue(form.guestCount)}
                 aria-invalid={Boolean(errors.guestCount)}
