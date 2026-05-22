@@ -6,7 +6,6 @@ import { FtwSiteHeader } from '../site/FtwSiteHeader';
 import { CateringCalculator } from './CateringCalculator';
 import { CateringFAQ } from './CateringFAQ';
 import { CateringForm } from './CateringForm';
-import { CateringOccasionsSection } from './CateringOccasionsSection';
 import { CateringPhotoGallery } from './CateringPhotoGallery';
 import { CateringTestimonials } from './CateringTestimonials';
 
@@ -38,7 +37,6 @@ export function CateringPage() {
       </section>
 
       <main id="main-content" className="catering-main">
-        <CateringOccasionsSection />
         <CateringPhotoGallery />
         <CateringCalculator />
         <CateringForm />
