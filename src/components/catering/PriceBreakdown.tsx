@@ -30,7 +30,9 @@ export function PriceBreakdown({ result }: PriceBreakdownProps) {
           <hr className="price-breakdown__divider" />
 
           <div className="price-breakdown__row">
-            <span>Food subtotal</span>
+            <span>
+              {result.optionsSubtotal > 0 ? 'Food & options subtotal' : 'Food subtotal'}
+            </span>
             <span>{formatMoney(result.foodAfterServiceMultiplier)}</span>
           </div>
 

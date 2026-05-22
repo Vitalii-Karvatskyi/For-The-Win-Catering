@@ -4,6 +4,7 @@ import type {
   CalculatorInput,
   CalculatorResult,
   MenuQuantities,
+  OptionQuantities,
   PriceLineItem,
 } from '../types/catering';
 
@@ -31,6 +32,17 @@ export function sumBurgerUnits(quantities: MenuQuantities): number {
 
 export function hasMenuItems(quantities: MenuQuantities): boolean {
   return Object.values(quantities).some((qty) => qty > 0);
+}
+
+export function hasOptionSelections(optionQuantities: OptionQuantities): boolean {
+  return Object.values(optionQuantities).some((qty) => qty > 0);
+}
+
+export function hasTaxableItems(
+  quantities: MenuQuantities,
+  optionQuantities: OptionQuantities,
+): boolean {
+  return hasMenuItems(quantities) || hasOptionSelections(optionQuantities);
 }
 
 export function calculateCateringEstimate(
@@ -94,6 +106,7 @@ export function calculateCateringEstimate(
   const foodAfterServiceMultiplier = rawFoodTotal * service.foodMultiplier;
 
   const menuItemsAdded = hasMenuItems(quantities);
+  const taxableItemsAdded = hasTaxableItems(quantities, optionQuantities);
 
   let laborSubtotal = 0;
   let tripChargeAmount = 0;
@@ -117,7 +130,7 @@ export function calculateCateringEstimate(
     });
   }
 
-  const foodTaxableSubtotal = menuItemsAdded ? foodAfterServiceMultiplier : 0;
+  const foodTaxableSubtotal = taxableItemsAdded ? foodAfterServiceMultiplier : 0;
   const feesSubtotal = menuItemsAdded ? laborSubtotal + tripChargeAmount : 0;
   const taxAmount = foodTaxableSubtotal * cateringPricing.tax.rate;
   const subtotalBeforeTax = foodTaxableSubtotal + feesSubtotal;
