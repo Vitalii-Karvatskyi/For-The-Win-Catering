@@ -44,12 +44,7 @@ export const cateringFaq = [
   {
     id: 'food-minimum',
     question: 'What is the food minimum?',
-    answer: 'Starting at $1,900 + tax, varies by county.',
-  },
-  {
-    id: 'servings',
-    question: 'How many servings are included?',
-    answer: 'Covers approx. 120–128 combo meals, each with fries.',
+    answer: 'Starting at $600 + tax, varies by county.',
   },
   {
     id: 'deposit',
@@ -68,10 +63,10 @@ export const cateringFaq = [
     answer: 'Deposit refundable if cancelled at least 1 week before the event.',
   },
   {
-    id: 'truck-dimensions',
-    question: 'What are the truck dimensions and setup requirements?',
+    id: 'van-dimensions',
+    question: 'What are the van dimensions and setup requirements?',
     answer:
-      'Truck: 33 ft. long, 13 ft. high, 8 ft. wide, fully self-sufficient. Onsite setup requires a 12 ft × 12 ft service area at your venue.',
+      'Van: 33 ft. long, 13 ft. high, 8 ft. wide, fully self-sufficient. Onsite setup requires a 12 ft × 12 ft service area at your venue.',
   },
   {
     id: 'milkshakes',
