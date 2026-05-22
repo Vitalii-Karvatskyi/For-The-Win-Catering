@@ -28,12 +28,14 @@ import { SmartRecommendations } from './SmartRecommendations';
 function createDefaultOptionQuantities(): Record<OptionId, number> {
   return {
     glutenFreeBun: 0,
+    freshCondiments: 0,
   };
 }
 
 type QuantityStepperProps = {
   id: string;
   label: string;
+  subtitle?: string;
   priceLabel: string;
   value: number;
   max?: number;
@@ -44,6 +46,7 @@ type QuantityStepperProps = {
 function QuantityStepper({
   id,
   label,
+  subtitle,
   priceLabel,
   value,
   max,
@@ -66,6 +69,7 @@ function QuantityStepper({
         <div className="qty-row__label" id={`${id}-label`}>
           {label}
         </div>
+        {subtitle ? <div className="qty-row__subtitle">{subtitle}</div> : null}
         <div className="qty-row__price">{priceLabel}</div>
       </div>
       <div className="qty-stepper" role="group" aria-labelledby={`${id}-label`}>
@@ -259,22 +263,35 @@ export function CateringCalculator() {
                 Choose how many burgers need a gluten-free bun (not applied to every
                 burger).
               </p>
-              {Object.entries(cateringPricing.options).map(([key, opt]) => (
-                <QuantityStepper
-                  key={key}
-                  id={`option-${key}`}
-                  label={opt.label}
-                  priceLabel={`${formatMoney(opt.pricePerUnit)} each`}
-                  value={optionQuantities[key as OptionId]}
-                  max={burgerCount}
-                  onChange={(v) =>
-                    setOptionQuantities((prev) => ({
-                      ...prev,
-                      [key]: v,
-                    }))
-                  }
-                />
-              ))}
+              {Object.entries(cateringPricing.options).map(([key, opt]) => {
+                const optionKey = key as OptionId;
+                const maxQty =
+                  'maxQuantity' in opt && opt.maxQuantity != null
+                    ? opt.maxQuantity
+                    : burgerCount;
+                const priceLabel =
+                  'maxQuantity' in opt && opt.maxQuantity === 1
+                    ? formatMoney(opt.pricePerUnit)
+                    : `${formatMoney(opt.pricePerUnit)} each`;
+
+                return (
+                  <QuantityStepper
+                    key={key}
+                    id={`option-${key}`}
+                    label={opt.label}
+                    subtitle={'subtitle' in opt ? opt.subtitle : undefined}
+                    priceLabel={priceLabel}
+                    value={optionQuantities[optionKey]}
+                    max={maxQty}
+                    onChange={(v) =>
+                      setOptionQuantities((prev) => ({
+                        ...prev,
+                        [key]: v,
+                      }))
+                    }
+                  />
+                );
+              })}
             </div>
           </div>
 

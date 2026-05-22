@@ -12,7 +12,6 @@ export function createEmptyQuantities(): MenuQuantities {
     allYouCanEat: 0,
     cheeseburger: 0,
     doubleCheeseburger: 0,
-    hamburger: 0,
     veggieBurger: 0,
     fries: 0,
   };
@@ -26,7 +25,6 @@ export function sumBurgerUnits(quantities: MenuQuantities): number {
   return (
     quantities.cheeseburger +
     quantities.doubleCheeseburger +
-    quantities.hamburger +
     quantities.veggieBurger
   );
 }
@@ -119,11 +117,11 @@ export function calculateCateringEstimate(
     });
   }
 
-  const subtotalBeforeTax = menuItemsAdded
-    ? foodAfterServiceMultiplier + laborSubtotal + tripChargeAmount
-    : 0;
-  const taxAmount = menuItemsAdded ? subtotalBeforeTax * cateringPricing.tax.rate : 0;
-  const estimatedTotal = menuItemsAdded ? subtotalBeforeTax + taxAmount : 0;
+  const foodTaxableSubtotal = menuItemsAdded ? foodAfterServiceMultiplier : 0;
+  const feesSubtotal = menuItemsAdded ? laborSubtotal + tripChargeAmount : 0;
+  const taxAmount = foodTaxableSubtotal * cateringPricing.tax.rate;
+  const subtotalBeforeTax = foodTaxableSubtotal + feesSubtotal;
+  const estimatedTotal = subtotalBeforeTax + taxAmount;
   const safeGuests = Math.max(guestCount, 1);
   const pricePerGuest = estimatedTotal / safeGuests;
 

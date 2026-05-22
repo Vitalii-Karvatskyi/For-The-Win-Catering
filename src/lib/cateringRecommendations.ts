@@ -16,7 +16,6 @@ export type QuantityRecommendations = {
     allYouCanEat: number;
     cheeseburger: number;
     doubleCheeseburger: number;
-    hamburger: number;
     veggieBurger: number;
     fries: number;
   };
@@ -37,7 +36,6 @@ export function getRecommendationsForGuests(
       allYouCanEat: 0,
       cheeseburger: cheeseburgers,
       doubleCheeseburger: 0,
-      hamburger: 0,
       veggieBurger: 0,
       fries: friesPortions,
     },

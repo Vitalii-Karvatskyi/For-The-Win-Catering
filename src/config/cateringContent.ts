@@ -31,7 +31,7 @@ export const cateringSections = {
   },
   faq: {
     id: 'faq',
-    title: 'Frequently Asked Questions',
+    title: 'Truck Pricing & Requirements',
   },
   requirements: {
     id: 'requirements',
@@ -42,46 +42,42 @@ export const cateringSections = {
 
 export const cateringFaq = [
   {
-    id: 'onsite',
-    question: 'Do you offer onsite catering?',
-    answer:
-      'Yes. Our onsite cooking service brings the FTW grill experience to your venue with fresh burgers cooked to order.',
+    id: 'food-minimum',
+    question: 'What is the food minimum?',
+    answer: 'Starting at $1,900 + tax, varies by county.',
   },
   {
-    id: 'dropoff',
-    question: 'Do you offer drop-off catering?',
-    answer:
-      'Yes. Drop-off catering is available for events that prefer pre-packed, ready-to-serve burgers and fries delivered at your scheduled time.',
+    id: 'servings',
+    question: 'How many servings are included?',
+    answer: 'Covers approx. 120–128 combo meals, each with fries.',
   },
   {
-    id: 'areas',
-    question: 'What areas do you serve?',
+    id: 'deposit',
+    question: 'How much is the deposit to reserve my date?',
     answer:
-      'Service areas vary by FTW location and event date. Submit an inquiry with your address and we will confirm travel, setup, and availability.',
+      '25% of the event total is required to reserve your date (applied to event cost).',
   },
   {
-    id: 'large-events',
-    question: 'Can you handle 50+ guests?',
-    answer:
-      'Absolutely. We regularly support mid-size and large events. Guest count, menu mix, and service type help us staff and plan accordingly.',
+    id: 'final-payment',
+    question: 'When is final payment due?',
+    answer: 'Due 10 days before the event.',
   },
   {
-    id: 'dietary',
-    question: 'Do you offer veggie or gluten-free options?',
-    answer:
-      'Yes. Veggie burgers and gluten-free buns are available. Note any dietary needs in your inquiry so we can plan quantities.',
+    id: 'refunds',
+    question: 'What is your refund policy?',
+    answer: 'Deposit refundable if cancelled at least 1 week before the event.',
   },
   {
-    id: 'calculator',
-    question: 'Is the calculator final pricing?',
+    id: 'truck-dimensions',
+    question: 'What are the truck dimensions and setup requirements?',
     answer:
-      'No. The calculator provides an estimate only. Final pricing depends on event details, location, menu selections, service type, and date availability.',
+      'Truck: 33 ft. long, 13 ft. high, 8 ft. wide, fully self-sufficient. Onsite setup requires a 12 ft × 12 ft service area at your venue.',
   },
   {
-    id: 'booking',
-    question: 'How far in advance should I book?',
+    id: 'milkshakes',
+    question: 'Are milkshakes available for catering?',
     answer:
-      'We recommend reaching out at least 2–4 weeks ahead for most events. Peak dates and large guest counts may require more lead time.',
+      'Milkshakes are currently only available at commercial event spaces with freezer space and electrical hookups.',
   },
 ] as const;
 
@@ -94,17 +90,13 @@ export const cateringOccasions = [
   {
     id: 'parties',
     title: 'Parties',
-    description: 'Birthdays, graduations, game days, celebrations',
+    description:
+      'Birthdays, graduations, game days, celebrations, holidays, family gatherings',
   },
   {
     id: 'weddings',
     title: 'Weddings',
-    description: 'Rehearsal dinners, receptions, cocktail hours',
-  },
-  {
-    id: 'holidays',
-    title: 'Holidays',
-    description: 'Thanksgiving, holiday parties, family gatherings',
+    description: 'Rehearsal dinners, receptions, cocktail hours, midnight munchies',
   },
 ] as const;
 

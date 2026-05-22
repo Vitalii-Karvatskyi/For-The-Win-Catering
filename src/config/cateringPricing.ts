@@ -15,18 +15,13 @@ export const cateringPricing = {
     },
     cheeseburger: {
       id: 'cheeseburger',
-      label: 'Cheeseburger',
-      pricePerUnit: 10.5,
+      label: 'Cheeseburger/Hamburger',
+      pricePerUnit: 10,
     },
     doubleCheeseburger: {
       id: 'doubleCheeseburger',
-      label: 'Double cheeseburger',
+      label: 'Double Cheeseburger/Hamburger',
       pricePerUnit: 15,
-    },
-    hamburger: {
-      id: 'hamburger',
-      label: 'Hamburger',
-      pricePerUnit: 9.5,
     },
     veggieBurger: {
       id: 'veggieBurger',
@@ -44,7 +39,14 @@ export const cateringPricing = {
     glutenFreeBun: {
       id: 'glutenFreeBun',
       label: 'Gluten-free bun',
-      pricePerUnit: 2,
+      pricePerUnit: 3,
+    },
+    freshCondiments: {
+      id: 'freshCondiments',
+      label: 'Fresh condiments',
+      subtitle: 'lettuce, tomato, pickled jalapeño',
+      pricePerUnit: 20,
+      maxQuantity: 1,
     },
   },
 
@@ -97,7 +99,7 @@ export const cateringPricing = {
   },
 
   tax: {
-    rate: 0.0875,
+    rate: 0.1075,
     label: 'Estimated tax',
   },
 
