@@ -93,7 +93,7 @@ export const cateringPricing = {
   tripCharge: {
     id: 'tripCharge',
     label: 'Trip charge',
-    amount: 400,
+    amount: 250,
   },
 
   tax: {
