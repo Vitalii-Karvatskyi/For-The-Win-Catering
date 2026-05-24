@@ -66,7 +66,7 @@ export const cateringFaq = [
     id: 'van-dimensions',
     question: 'What are the van dimensions and setup requirements?',
     answer:
-      'Van: 33 ft. long, 13 ft. high, 8 ft. wide, fully self-sufficient. Onsite setup requires a 12 ft × 12 ft service area at your venue.',
+      'Exterior dimensions (approx.): length ~219.9 in (5.58 m); width without mirrors 81.3 in (2.06 m); width with mirrors ~97.4 in (2.47 m); height 83–84 in (2.11 m); wheelbase 130 in (3.30 m). The van is fully self-sufficient. Onsite setup requires a 12 ft × 12 ft service area at your venue.',
   },
   {
     id: 'milkshakes',
