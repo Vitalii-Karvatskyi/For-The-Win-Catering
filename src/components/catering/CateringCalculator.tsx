@@ -265,13 +265,8 @@ export function CateringCalculator() {
               {Object.entries(cateringPricing.options).map(([key, opt]) => {
                 const optionKey = key as OptionId;
                 const maxQty =
-                  'maxQuantity' in opt && opt.maxQuantity != null
-                    ? opt.maxQuantity
-                    : burgerCount;
-                const priceLabel =
-                  'maxQuantity' in opt && opt.maxQuantity === 1
-                    ? formatMoney(opt.pricePerUnit)
-                    : `${formatMoney(opt.pricePerUnit)} each`;
+                  optionKey === 'glutenFreeBun' ? burgerCount : undefined;
+                const priceLabel = `${formatMoney(opt.pricePerUnit)} each`;
 
                 return (
                   <QuantityStepper

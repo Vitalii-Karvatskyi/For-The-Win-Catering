@@ -46,7 +46,6 @@ export const cateringPricing = {
       label: 'Fresh condiments',
       subtitle: 'lettuce, tomato, pickled jalapeño',
       pricePerUnit: 20,
-      maxQuantity: 1,
     },
   },
 
