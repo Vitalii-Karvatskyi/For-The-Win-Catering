@@ -12,7 +12,7 @@ function publicAsset(path: string): string {
 export const ftwAssets = {
   favicon: publicAsset('favicon.png'),
   logo: publicAsset('images/ftwlogo.webp'),
-  heroImage: publicAsset('images/9f43a709-8102-439c-baeb-cc3dd2148a1b.jpeg'),
+  heroImage: publicAsset('images/Burger_bg.png'),
   occasionsImage: publicAsset('images/c7b782da-84f9-4293-bffb-47d2e7b08998.jpeg'),
   gallery: [
     {

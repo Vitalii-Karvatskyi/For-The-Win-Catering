@@ -80,9 +80,9 @@ export const cateringPricing = {
       { minGuests: 125, maxGuests: 199, ratePerHour: 125 },
       { minGuests: 75, maxGuests: 124, ratePerHour: 100 },
       { minGuests: 51, maxGuests: 74, ratePerHour: 75 },
-      { minGuests: 20, maxGuests: 50, ratePerHour: 50 },
+      { minGuests: 20, maxGuests: 50, ratePerHour: 60 },
     ],
-    belowTierRatePerHour: 50,
+    belowTierRatePerHour: 60,
   },
 
   eventDuration: {
