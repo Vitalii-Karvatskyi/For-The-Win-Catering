@@ -137,12 +137,13 @@ export function CateringCalculator() {
   const ayceActive = useMemo(() => isAllYouCanEatActive(quantities), [quantities]);
 
   useEffect(() => {
+    if (ayceActive) return;
     setOptionQuantities((prev) => {
       const capped = Math.min(prev.glutenFreeBun, burgerCount);
       if (capped === prev.glutenFreeBun) return prev;
       return { ...prev, glutenFreeBun: capped };
     });
-  }, [burgerCount]);
+  }, [burgerCount, ayceActive]);
 
   const result = useMemo(
     () => calculateCateringEstimate(calculatorInput),
@@ -265,7 +266,9 @@ export function CateringCalculator() {
               {Object.entries(cateringPricing.options).map(([key, opt]) => {
                 const optionKey = key as OptionId;
                 const maxQty =
-                  optionKey === 'glutenFreeBun' ? burgerCount : undefined;
+                  optionKey === 'glutenFreeBun' && !ayceActive
+                    ? burgerCount
+                    : undefined;
                 const priceLabel = `${formatMoney(opt.pricePerUnit)} each`;
 
                 return (
